@@ -1,0 +1,15 @@
+import "@/styles/globals.css";
+import NavBar from "@/components/Navbar";
+import { Sarabun } from "next/font/google";
+const sarabun = Sarabun({
+  subsets: ["latin", "thai"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+});
+export default function App({ Component, pageProps }) {
+  return (
+    <div className={"h-full " + sarabun.className}>
+      <NavBar />
+      <Component {...pageProps} />
+    </div>
+  );
+}
